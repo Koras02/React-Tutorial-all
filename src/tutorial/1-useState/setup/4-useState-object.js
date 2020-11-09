@@ -1,7 +1,31 @@
 import React, { useState } from 'react';
 
 const UseStateObject = () => {
-  return <h2>useState object example</h2>;
+  const [person,setPerson] = useState({
+  name:'peter',
+  age:24,
+  massage:'random message',
+  });
+
+  const [name, setName] = useState('peter')
+  const [age, setAge] = useState('24')
+  const [message, setMessage] = useState('random message')
+  ;
+
+  const changeMesaage = () => {
+    // setPerson({ ...person, message: 'hello world' });
+    setMessage('hello world');
+  };
+  return(
+   <>
+    <h3>{name}</h3>
+    <h3>{age}</h3>
+    <h3>{message}</h3>
+    <button className="btn" onClick={changeMesaage}>
+      change message
+      </button>
+    </>
+    );
 };
 
 export default UseStateObject;
